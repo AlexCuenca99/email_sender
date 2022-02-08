@@ -14,6 +14,6 @@ def subscribe(request):
         message = 'Hope you are enjoying your Django Tutorials'
         recepient = str(sub['Email'].value())
         send_mail(subject, 
-            message, EMAIL_HOST_USER, [recepient], fail_silently = False)
+            message, EMAIL_HOST_USER, [recepient])
         return render(request, 'subscribe/success.html', {'recepient': recepient})
     return render(request, 'subscribe/index.html', {'form':sub})
